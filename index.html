@@ -535,7 +535,11 @@ body, html {
 </button>
 
 <script>
- (function(){
+  
+  // Automatically handle dark mode toggle
+
+/*
+(function(){
   const toggle = document.getElementById('themeToggle');
   const saved = localStorage.getItem('theme');
 
@@ -552,6 +556,39 @@ body, html {
     localStorage.setItem('theme', toggle.checked ? 'dark' : 'light');
   });
 })();
+*/
+
+
+// Dark mode should ONLY turn on when the user manually toggles it.
+
+(function () {
+  const themeToggle = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('theme');
+
+  // Apply ONLY saved user preference
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark');
+    themeToggle.checked = true;
+  } else {
+    document.body.classList.remove('dark');
+    themeToggle.checked = false;
+  }
+
+  // Toggle manually
+  themeToggle.addEventListener('change', function () {
+    if (this.checked) {
+      document.body.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  });
+})();
+
+
+
+
 
   // Mobile menu toggle
   (function(){
@@ -681,4 +718,3 @@ body, html {
 
 </body>
 </html>
-
