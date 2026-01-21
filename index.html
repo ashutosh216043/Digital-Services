@@ -41,6 +41,58 @@
     .btn{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:14px 28px;border-radius:999px;background:var(--gradient);color:#fff;text-decoration:none;font-weight:600;box-shadow:0 12px 28px rgba(37,99,235,.35);transition:transform .2s ease, filter .2s ease}
     .btn:hover{filter:brightness(.98);transform:translateY(-2px)}
 
+
+    /* Modern Theme Toggle */
+.theme-switch {
+  position: relative;
+  width: 52px;
+  height: 28px;
+  display: inline-block;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #cbd5f5;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+}
+
+/* ON state */
+.theme-switch input:checked + .slider {
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+}
+
+.theme-switch input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+/* Dark mode tweak */
+body.dark .slider {
+  background: #1e293b;
+}
+
+
     /* Navigation */
     nav{background:#fff;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.05)}
     nav .container{max-width:1200px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:14px}
@@ -118,7 +170,7 @@
     body.dark .theme-toggle{background:#172554;color:#e5e7eb}
     body.dark .input, body.dark .select{background:#0f172a;color:#e5e7eb;border-color:#1f2937}
     body.dark .mini-btn{background:#172554;color:#e5e7eb}
-    .section-actions{display:flex;justify-content:center;gap:12px;margin-top:10px}
+    .section-actions{display:flex;justify-content:center;gap:12px;margin-top:10px;margin-bottom:25px}
     .card .mini-btn{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:999px;background:#eef2ff;color:#111;text-decoration:none;font-weight:600}
     .card .mini-btn:hover{background:#e0e7ff}
     .form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
@@ -278,10 +330,12 @@ body, html {
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 16a7 7 0 110-14 7 7 0 010 14z" fill="currentColor"/></svg>
-        Theme
-      </button>
+      
+      <label class="theme-switch" aria-label="Toggle dark mode">
+  <input type="checkbox" id="themeToggle">
+  <span class="slider"></span>
+</label>
+
       <button class="theme-toggle" id="shareBtn" aria-label="Share this page">Share</button>
     </div>
     <button class="hamburger" id="menuToggle" aria-label="Toggle menu">
@@ -624,5 +678,3 @@ body, html {
 
 </body>
 </html>
-
-
