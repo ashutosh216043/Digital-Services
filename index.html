@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Online Digital Services</title>
+  <meta name="description" content="Our Online Digital Services – Trusted online form filling, resume making, PAN card services, ticket booking & digital help. 100% online." />
+  <meta name="theme-color" content="#2563eb" />
+  <meta property="og:title" content="Our Online Digital Services" />
+  <meta property="og:description" content="No Travel • No Queue • 100% Online — Forms, PAN, Resume, Tickets & more via WhatsApp" />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#2563eb;
+      --primary-dark:#1e40af;
+      --secondary:#0f172a;
+      --light:#f8fafc;
+      --gray:#64748b;
+      --success:#16a34a;
+      --gradient:linear-gradient(135deg,#2563eb,#4f46e5);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:var(--light);color:#111}
+
+    /* Header / Hero */
+    header{background:var(--gradient);color:#fff;padding:96px 20px 110px;text-align:center;position:relative;overflow:hidden}
+    header::after{content:"";position:absolute;bottom:-60px;left:0;width:100%;height:120px;background:#fff;border-radius:100% 100% 0 0}
+    header h1{font-size:3rem;margin-bottom:14px;font-weight:700;letter-spacing:.2px}
+    header p{font-size:1.1rem;opacity:.95;max-width:800px;margin:0 auto 18px}
+    .hero-badges{display:flex;justify-content:center;gap:12px;margin-top:12px;flex-wrap:wrap}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);color:#fff;padding:8px 14px;border-radius:999px;font-weight:600}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:14px 28px;border-radius:999px;background:var(--gradient);color:#fff;text-decoration:none;font-weight:600;box-shadow:0 12px 28px rgba(37,99,235,.35);transition:transform .2s ease, filter .2s ease}
+    .btn:hover{filter:brightness(.98);transform:translateY(-2px)}
+
+    /* Navigation */
+    nav{background:#fff;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+    nav .container{max-width:1200px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:14px}
+    .brand{font-weight:700;color:var(--primary);text-decoration:none;letter-spacing:.2px}
+    .menu{display:flex;justify-content:center;gap:22px;list-style:none;margin-left:auto}
+    .menu a{text-decoration:none;color:#111;font-weight:500}
+    .menu a:hover{color:var(--primary)}
+    .nav-actions{display:flex;align-items:center;gap:10px;margin-left:10px}
+    .theme-toggle{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#eef2ff;color:#111;border:none;cursor:pointer;font-weight:600}
+    .hamburger{background:transparent;border:none;cursor:pointer;display:none;margin-left:auto}
+
+    /* Sections */
+    section{padding:70px 20px;max-width:1200px;margin:auto}
+    h2{text-align:center;font-size:2rem;margin-bottom:15px}
+    .subtitle{text-align:center;color:var(--gray);margin-bottom:40px}
+
+    /* Cards */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+    .card{background:#fff;padding:28px;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,.08);transition:.35s;position:relative;overflow:hidden}
+    .card::before{content:"";position:absolute;inset:0;background:var(--gradient);opacity:0;transition:.35s;  pointer-events:none}
+    .card:hover::before{opacity:.06}
+    .card:hover{transform:translateY(-6px)}
+    .card h3{margin-bottom:10px}
+    .price{color:var(--success);font-weight:600}
+
+    /* Steps */
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px}
+    .step{background:#fff;padding:25px;border-radius:16px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,.06)}
+    .step span{display:inline-block;background:var(--primary);color:#fff;width:40px;height:40px;border-radius:50%;line-height:40px;font-weight:600;margin-bottom:10px}
+
+    /* Contact */
+    .contact-box{background:#fff;border-radius:20px;padding:35px;box-shadow:0 15px 30px rgba(0,0,0,.08);text-align:center}
+
+    /* Footer */
+    footer{background:var(--secondary);color:#fff;text-align:center;padding:25px;margin-top:40px}
+
+    /* Floating WhatsApp */
+    .whatsapp{position:fixed;bottom:22px;right:22px;background:#25D366;color:#fff;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 15px 35px rgba(0,0,0,.35);animation:pulse 2s infinite}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}70%{box-shadow:0 0 0 20px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+    /* Reveal on scroll */
+    .reveal{opacity:0;transform:translateY(14px);transition:.6s ease}
+    .in-view{opacity:1;transform:translateY(0)}
+
+    /* Responsive */
+    @media(max-width:900px){
+      .menu{display:none;position:absolute;top:60px;left:0;right:0;background:#fff;padding:12px 20px;box-shadow:0 10px 20px rgba(0,0,0,.08);flex-direction:column}
+      .menu.open{display:flex}
+      .hamburger{display:block}
+      .nav-actions{margin-left:0}
+    }
+
+    @media(max-width:600px){
+      header{padding:60px 15px 85px}
+      header h1{font-size:2rem}
+      header p{font-size:1rem}
+      section{padding:50px 15px}
+      h2{font-size:1.6rem}
+      .grid{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr}
+      .card,.step,.contact-box{padding:20px;border-radius:14px}
+      .btn{padding:10px 20px;font-size:.95rem}
+      footer{font-size:.9rem}
+      .whatsapp{width:52px;height:52px;font-size:24px}
+      .topbtn{width:44px;height:44px}
+    }
+
+    /* Dark Theme */
+    body.dark{background:#0b1120;color:#e5e7eb}
+    body.dark nav{background:#0f172a;box-shadow:0 2px 10px rgba(0,0,0,.35)}
+    body.dark .menu a{color:#e5e7eb}
+    body.dark .menu{background:#0f172a}
+    body.dark .card, body.dark .step, body.dark .contact-box{background:#0f172a;color:#e5e7eb;box-shadow:0 15px 40px rgba(0,0,0,.35)}
+    body.dark .badge{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15)}
+    body.dark .theme-toggle{background:#172554;color:#e5e7eb}
+    body.dark .input, body.dark .select{background:#0f172a;color:#e5e7eb;border-color:#1f2937}
+    body.dark .mini-btn{background:#172554;color:#e5e7eb}
+    .section-actions{display:flex;justify-content:center;gap:12px;margin-top:10px}
+    .card .mini-btn{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:999px;background:#eef2ff;color:#111;text-decoration:none;font-weight:600}
+    .card .mini-btn:hover{background:#e0e7ff}
+    .form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+    .form .full{grid-column:1/-1}
+    .input{padding:12px 14px;border:1px solid #e5e7eb;border-radius:12px;font-family:inherit}
+    .select{padding:12px 14px;border:1px solid #e5e7eb;border-radius:12px;font-family:inherit}
+    .submit{padding:14px 20px;border:none;border-radius:12px;background:var(--gradient);color:#fff;font-weight:600;cursor:pointer}
+    .submit:hover{filter:brightness(.98)}
+    .topbtn{position:fixed;bottom:22px;left:22px;background:#0ea5e9;color:#fff;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(14,165,233,.45);border:none;cursor:pointer}
+    .faq details summary{cursor:pointer}
+    .faq details p{margin-top:8px;color:#64748b}
+
+
+
+
+
+
+
+
+
+
+
+    /* ===============================
+   UNIVERSAL RESPONSIVE FIXES
+   (Add-only – no layout changes)
+================================ */
+
+/* Prevent horizontal overflow on all devices */
+body, html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Improve large-screen readability */
+@media (min-width: 1600px) {
+  section {
+    max-width: 1400px;
+  }
+  header h1 {
+    font-size: 3.4rem;
+  }
+  header p {
+    font-size: 1.25rem;
+  }
+}
+
+/* Tablets & small laptops */
+@media (max-width: 1024px) {
+  header h1 {
+    font-size: 2.4rem;
+  }
+  nav .container {
+    flex-wrap: wrap;
+  }
+}
+
+/* Small phones (≤ 420px) */
+@media (max-width: 420px) {
+  header h1 {
+    font-size: 1.75rem;
+    line-height: 1.25;
+  }
+
+  header p {
+    font-size: 0.95rem;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .theme-toggle {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+
+  .brand {
+    font-size: 0.95rem;
+  }
+}
+
+/* Very small devices (≤ 360px) */
+@media (max-width: 360px) {
+  header {
+    padding: 50px 12px 70px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .price {
+    font-size: 0.95rem;
+  }
+}
+
+/* Form fields responsiveness */
+@media (max-width: 700px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Floating buttons spacing on small screens */
+@media (max-width: 480px) {
+  .whatsapp {
+    bottom: 16px;
+    right: 16px;
+  }
+  .topbtn {
+    bottom: 16px;
+    left: 16px;
+  }
+}
+
+/* Ultra-wide screens (TV / large monitor safety) */
+@media (min-width: 2000px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Our Online Digital Services</h1>
+  <p>Trusted Online Form Filling & Digital Support – 100% Online</p>
+  <div class="hero-badges">
+    <span class="badge">Secure & Private</span>
+    <span class="badge">Fast Turnaround</span>
+    <span class="badge">Affordable Pricing</span>
+  </div>
+  <a class="btn" href="https://wa.me/917905102706?text=Hello%20I%20need%20online%20digital%20services" target="_blank">Chat on WhatsApp</a>
+</header>
+
+<nav>
+  <div class="container">
+    <a class="brand" href="#">Digital Services</a>
+    
+    <ul class="menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 16a7 7 0 110-14 7 7 0 010 14z" fill="currentColor"/></svg>
+        Theme
+      </button>
+      <button class="theme-toggle" id="shareBtn" aria-label="Share this page">Share</button>
+    </div>
+    <button class="hamburger" id="menuToggle" aria-label="Toggle menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="#158"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p class="subtitle">No Travel • No Queue • 100% Online</p>
+  <p style="max-width:900px;margin:auto;text-align:center;color:#334155">
+    <strong>Our Online Digital Services</strong> is a modern replacement for traditional cyber cafés.
+    You do <strong>not need to travel</strong>, stand in queues, or waste time visiting any office.
+    All services are provided <strong>completely online from your home</strong> using WhatsApp and online forms.
+    <br><br>
+    We help students, job seekers, and the general public with government exam forms, college admissions,
+    resume making, PAN card services, ticket booking, and document-related work.
+    Your documents are handled securely and used only for the requested service.
+  </p>
+</section>
+
+<section id="why">
+  <h2>Why Choose Our Online Digital Services?</h2>
+  <p class="subtitle">Smart alternative to traditional cyber cafés</p>
+  <div class="grid">
+    <div class="card reveal"><h3>No Need to Travel</h3><p>Get all services from your home. No bus fare, no queues, no waiting.</p></div>
+    <div class="card reveal"><h3>100% Online Process</h3><p>Documents, payment, and delivery – everything happens online via WhatsApp.</p></div>
+    <div class="card reveal"><h3>Time Saving</h3><p>Your work is completed quickly and accurately without multiple visits.</p></div>
+    <div class="card reveal"><h3>Affordable Pricing</h3><p>Lower cost than physical cyber cafés with transparent pricing.</p></div>
+    <div class="card reveal"><h3>Secure & Private</h3><p>Your documents are kept confidential and used only for your service.</p></div>
+    <div class="card reveal"><h3>Support for Everyone</h3><p>Students, job seekers, workers, and elders – we help all.</p></div>
+  </div>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <p class="subtitle">All cyber café services – now online</p>
+  <div class="section-actions">
+    <input id="serviceSearch" class="input" placeholder="Search services (e.g., PAN, Resume)" aria-label="Search services" />
+  </div>
+  <div class="grid">
+    <div class="card reveal" data-tags="exam form ssc railway banking state">
+      <h3>Government Exam Form Filling</h3>
+      <p>SSC, Railway, Banking, State & Other Exams</p>
+      <a class="mini-btn" data-request="Government Exam Form Filling" href="#contact">Request via WhatsApp</a>
+    </div>
+    <div class="card reveal" data-tags="admission college university ug pg">
+      <h3>College / University Admission Forms</h3>
+      <p>UG, PG & Online Admission Applications</p>
+      <a class="mini-btn" data-request="Admission Form" href="#contact">Request via WhatsApp</a>
+    </div>
+    <div class="card reveal" data-tags="resume cv job profile">
+      <h3>Resume / CV Making</h3>
+      <p>Professional resumes in PDF format</p>
+      <a class="mini-btn" data-request="Resume / CV Making" href="#contact">Request via WhatsApp</a>
+    </div>
+    <div class="card reveal" data-tags="pan card correction new">
+      <h3>PAN Card Services</h3>
+      <p>New PAN application & correction</p>
+      <a class="mini-btn" data-request="PAN Card Services" href="#contact">Request via WhatsApp</a>
+    </div>
+    <div class="card reveal" data-tags="ticket booking train bus flight">
+      <h3>Online Ticket Booking</h3>
+      <p>Train, Bus & Flight booking support</p>
+      <a class="mini-btn" data-request="Online Ticket Booking" href="#contact">Request via WhatsApp</a>
+    </div>
+    <div class="card reveal" data-tags="document pdf photo resize signature">
+      <h3>Document Services</h3>
+      <p>PDF edit, photo resize & signature formatting</p>
+      <a class="mini-btn" data-request="Document Services" href="#contact">Request via WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <h2>How Our Online Service Works</h2>
+  <p class="subtitle">Simple • Fast • From your home</p>
+  <div class="steps">
+    <div class="step reveal"><span>1</span><p>Contact us on WhatsApp – no visit required</p></div>
+    <div class="step reveal"><span>2</span><p>Share details & documents online</p></div>
+    <div class="step reveal"><span>3</span><p>Pay securely via UPI</p></div>
+    <div class="step reveal"><span>4</span><p>We complete your work accurately</p></div>
+    <div class="step reveal"><span>5</span><p>You receive confirmation, PDF & screenshot</p></div>
+  </div>
+</section>
+
+<section id="pricing">
+<section id="testimonials">
+  <h2>What Our Customers Say</h2>
+  <p class="subtitle">Real feedback from satisfied clients</p>
+  <div class="grid" id="testimonialsGrid">
+    <div class="card" data-index="0"><h3>Avni</h3><p>Quick and accurate form filling. No travel needed!</p></div>
+    <div class="card" data-index="1"><h3>Preeti Ojha</h3><p>Got my resume made the same day. Professional quality.</p></div>
+    <div class="card" data-index="2"><h3>Ambi</h3><p>PAN correction handled smoothly. Highly recommended.</p></div>
+  </div>
+  <div class="section-actions">
+    <a class="btn" href="#contact">Get Started</a>
+  </div>
+</section>
+  <h2>Our Pricing</h2>
+  <p class="subtitle">Transparent & affordable charges (No hidden fees)</p>
+  <div class="grid">
+    <div class="card reveal">
+      <h3>Government Exam Form</h3>
+      <p>SSC, Railway, Banking, State Exams</p>
+      <p class="price">₹100 – ₹150</p>
+    </div>
+    <div class="card reveal">
+      <h3>Admission Form</h3>
+      <p>College / University Online Admission</p>
+      <p class="price">₹200 – ₹300</p>
+    </div>
+    <div class="card reveal">
+      <h3>Resume / CV Making</h3>
+      <p>Professional Resume in PDF format</p>
+      <p class="price">₹150 – ₹250</p>
+    </div>
+    <div class="card reveal">
+      <h3>PAN Card Services</h3>
+      <p>New PAN & PAN Correction</p>
+      <p class="price">₹120 – ₹150</p>
+    </div>
+    <div class="card reveal">
+      <h3>Online Ticket Booking</h3>
+      <p>Train, Bus & Flight Booking</p>
+      <p class="price">₹50 – ₹100</p>
+    </div>
+    <div class="card reveal">
+      <h3>Document Services</h3>
+      <p>PDF Edit, Photo & Signature Resize</p>
+      <p class="price">₹50 – ₹100</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+<section id="faq">
+  <h2>Frequently Asked Questions</h2>
+  <p class="subtitle">Clear answers to common queries</p>
+  <div class="grid faq">
+    <details class="card">
+      <summary><strong>Do I need to visit your office?</strong></summary>
+      <p>No. All services are provided 100% online via WhatsApp and forms.</p>
+    </details>
+    <details class="card">
+      <summary><strong>Is my data safe and private?</strong></summary>
+      <p>Yes. Documents are used only for your requested service and kept confidential.</p>
+    </details>
+    <details class="card">
+      <summary><strong>How do I pay?</strong></summary>
+      <p>Payment is done securely via UPI after we confirm your request.</p>
+    </details>
+    <details class="card">
+      <summary><strong>How fast is the completion?</strong></summary>
+      <p>Most requests are completed the same day depending on complexity.</p>
+    </details>
+  </div>
+</section>
+  <h2>Contact Us</h2>
+  <p class="subtitle">We are here to help you</p>
+  <div class="contact-box reveal">
+    <p><strong>WhatsApp:</strong> +91-7905102706</p>
+    <p><strong>Email:</strong> ak21604321@gmail.com</p>
+    <p><strong>Working Hours:</strong> 9:00 AM – 9:00 PM</p>
+    <form id="requestForm" class="form">
+      <input class="input" id="name" name="name" placeholder="Your Name" required />
+      <input class="input" id="phone" name="phone" placeholder="Phone (WhatsApp)" required />
+      <select class="select" id="service" name="service" required>
+        <option value="">Select Service</option>
+        <option>Government Exam Form Filling</option>
+        <option>Admission Form</option>
+        <option>Resume / CV Making</option>
+        <option>PAN Card Services</option>
+        <option>Online Ticket Booking</option>
+        <option>Document Services</option>
+      </select>
+      <input class="input full" id="details" name="details" placeholder="Brief details (optional)" />
+      <button class="submit full" type="submit">Request via WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Our Online Digital Services | All Rights Reserved</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/917905102706?text=Hello%20I%20need%20online%20digital%20services" target="_blank" aria-label="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="#fff">
+    <path d="M19.11 17.53c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.34-.81-.72-1.36-1.6-1.52-1.87-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3s.98 2.67 1.12 2.85c.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.58.65.21 1.24.18 1.7.11.52-.08 1.61-.66 1.84-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32z"/>
+    <path d="M16.04 3C9.4 3 4 8.4 4 15.04c0 2.65.87 5.1 2.34 7.07L4 29l7.07-2.31a11.98 11.98 0 0 0 4.97 1.06h.01C22.6 27.75 28 22.35 28 15.7 28 9.06 22.6 3.66 16.04 3zm0 21.8c-1.52 0-3.02-.41-4.32-1.18l-.31-.18-4.19 1.37 1.4-4.07-.2-.33a9.78 9.78 0 0 1-1.51-5.2c0-5.44 4.42-9.87 9.87-9.87 5.45 0 9.87 4.43 9.87 9.87 0 5.44-4.42 9.87-9.87 9.87z"/>
+  </svg>
+</a>
+
+<button class="topbtn" id="topBtn" aria-label="Scroll to top">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+
+<script>
+  (function(){
+    const themeToggle = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme');
+    if(saved){
+      if(saved === 'dark') document.body.classList.add('dark');
+    } else {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if(prefersDark) document.body.classList.add('dark');
+    }
+    themeToggle && themeToggle.addEventListener('click', function(){
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    });
+  })();
+
+  // Mobile menu toggle
+  (function(){
+    const btn = document.getElementById('menuToggle');
+    const menu = document.querySelector('nav .menu');
+    btn && btn.addEventListener('click', function(){
+      menu && menu.classList.toggle('open');
+    });
+  })();
+
+  // Reveal on scroll
+  (function(){
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('in-view');
+          observer.unobserve(e.target);
+        }
+      });
+    },{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  })();
+  (function(){
+    const shareBtn = document.getElementById('shareBtn');
+    shareBtn && shareBtn.addEventListener('click', async function(){
+      const data = {title: document.title, text: 'Check out Our Online Digital Services', url: location.href};
+      if(navigator.share){
+        try{await navigator.share(data);}catch(err){}
+      } else {
+        try{await navigator.clipboard.writeText(location.href);}catch(err){}
+      }
+    });
+  })();
+  (function(){
+    const topBtn = document.getElementById('topBtn');
+    window.addEventListener('scroll', function(){
+      const show = window.scrollY > 400;
+      if(topBtn) topBtn.style.display = show ? 'flex' : 'none';
+    });
+    topBtn && topBtn.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  })();
+  (function(){
+    const form = document.getElementById('requestForm');
+    const phone = '917905102706';
+    form && form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const mobile = document.getElementById('phone').value.replace(/\D/g,'');
+      const service = document.getElementById('service').value;
+      const details = document.getElementById('details').value.trim();
+      if(!name || !mobile || mobile.length < 10 || !service){
+        alert('Please fill name, valid phone and service.');
+        return;
+      }
+      const msg = `Hello, I am ${name}. Phone: ${mobile}. Service: ${service}. ${details?('Details: '+details):''}`.trim();
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
+    });
+    document.querySelectorAll('[data-request]').forEach(btn=>{
+      btn.addEventListener('click', function(ev){
+        const service = ev.currentTarget.getAttribute('data-request')||'';
+        const nameInput = document.getElementById('name');
+        const phoneInput = document.getElementById('phone');
+        const name = nameInput ? nameInput.value.trim() : '';
+        const mobile = phoneInput ? phoneInput.value.replace(/\D/g,'') : '';
+        const base = `Hello, I need ${service}.`;
+        const extra = name && mobile ? ` My name is ${name}. Phone: ${mobile}.` : '';
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(base + extra)}`;
+        window.open(url, '_blank');
+      });
+    });
+  })();
+  (function(){
+    const input = document.getElementById('serviceSearch');
+    const cards = Array.from(document.querySelectorAll('#services .card'));
+    input && input.addEventListener('input', function(){
+      const q = input.value.toLowerCase();
+      cards.forEach(c=>{
+        const text = (c.textContent||'').toLowerCase() + ' ' + (c.getAttribute('data-tags')||'');
+        c.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  })();
+  (function(){
+    const items = Array.from(document.querySelectorAll('#testimonials .card'));
+    let i = 0;
+    function rotate(){
+      items.forEach((el,idx)=>{
+        el.style.opacity = idx===i ? '1' : '0.45';
+        el.style.transform = idx===i ? 'scale(1.02)' : 'scale(1)';
+      });
+      i = (i+1) % items.length;
+    }
+    if(items.length){
+      rotate();
+      setInterval(rotate, 3500);
+    }
+  })();
+  (function(){
+    const ld = {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      name: 'Our Online Digital Services',
+      description: 'Trusted online form filling, resume making, PAN card services, ticket booking & digital help',
+      url: location.href,
+      telephone: '+91-7905102706',
+      areaServed: 'India',
+      sameAs: ['https://wa.me/917905102706'],
+      openingHours: 'Mo-Su 09:00-21:00',
+      makesOffer: [
+        { '@type': 'Offer', name: 'Government Exam Form Filling' },
+        { '@type': 'Offer', name: 'Admission Form' },
+        { '@type': 'Offer', name: 'Resume / CV Making' },
+        { '@type': 'Offer', name: 'PAN Card Services' },
+        { '@type': 'Offer', name: 'Online Ticket Booking' },
+        { '@type': 'Offer', name: 'Document Services' }
+      ]
+    };
+    const s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.textContent = JSON.stringify(ld);
+    document.head.appendChild(s);
+  })();
+</script>
+
+</body>
+</html>
